@@ -1,4 +1,4 @@
-package org.wecancodeit.securitydemo;
+package org.wecancodeit.securitydemo.config;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.wecancodeit.securitydemo.post.ImageUploadService;
+import org.wecancodeit.securitydemo.post.Post;
+import org.wecancodeit.securitydemo.post.PostRepository;
 
 @Controller
 public class SiteController {

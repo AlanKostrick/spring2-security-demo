@@ -1,4 +1,4 @@
-package org.wecancodeit.securitydemo;
+package org.wecancodeit.securitydemo.post;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,4 +1,4 @@
-package org.wecancodeit.securitydemo;
+package org.wecancodeit.securitydemo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

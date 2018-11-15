@@ -1,4 +1,4 @@
-package org.wecancodeit.securitydemo;
+package org.wecancodeit.securitydemo.post;
 
 import java.io.File;
 import java.io.FileOutputStream;
