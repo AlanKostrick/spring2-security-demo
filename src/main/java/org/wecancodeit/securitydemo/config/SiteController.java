@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +47,13 @@ public class SiteController {
 		model.addAttribute("postsModel", postRepo.findAll());
 		return "layouts/posts";
 	}
+	
+		
+	@RequestMapping("/admin/testing")
+	public String secure() {
+	    return "layouts/admin-only";
+	  }
+	
 
 	@RequestMapping("/admin/posts") // only accessible from admin side (try hitting on this endpoint as a
 									// guest and access will be forbidden)

@@ -27,9 +27,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
 		.authorizeRequests()
-		.antMatchers("/admin/**").hasRole("ADMIN")
-		.antMatchers("/h2-console/**", "/css/**", "/js/**").permitAll()
+		.antMatchers("/admin/**", "/h2-console/**").hasRole("ADMIN")
+		.antMatchers("/css/**", "/js/**").permitAll()
 		.anyRequest().authenticated()
+		.and().csrf().ignoringAntMatchers("/h2-console/**")//don't apply CSRF protection to /h2-console
 		.and()
 	.formLogin()
 		.loginPage("/login")
