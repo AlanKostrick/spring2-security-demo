@@ -18,8 +18,7 @@ Login  name/password: **admin/admin** , **user1/user1** or **user2/user2**
 
 ## Spring 2 updates inclusions/things to be careful of
 - Must give permissions to access your static resources (js, css, images, etc)
-- Must give permissions for things like h2-console access and update the applications.properties file
-- Add the MvcConfig file 
+- Must give permissions for things like h2-console access and update the applications.properties file 
 
 ### What I really like?
 Thymeleaf has a dialect for spring security... being brought into the build.gradle as the following dependency: `compile ('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')`... Using `sec: authorize` Thymeleaf can help you control the way your html content is being displayed? Only want to offer the option to logout once logged in? This dialect does that! Only want to offer certain nav buttons like add post when logged in as admin? This dialect does that! Pretty cool stuff Thymeleaf...here are the docs! `https://www.thymeleaf.org/doc/articles/springsecurity.html`
