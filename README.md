@@ -23,3 +23,13 @@ Login  name/password: **admin/admin** , **user1/user1** or **user2/user2**
 
 ### What I really like?
 Thymeleaf has a dialect for spring security... being brought into the build.gradle as the following dependency: `compile ('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')`... Using `sec: authorize` Thymeleaf can help you control the way your html content is being displayed? Only want to offer the option to logout once logged in? This dialect does that! Only want to offer certain nav buttons like add post when logged in as admin? This dialect does that! Pretty cool stuff Thymeleaf...here are the docs! `https://www.thymeleaf.org/doc/articles/springsecurity.html`
+
+
+### Reference docs utilized
+- [Spring Security Guide](https://spring.io/guides/gs/securing-web/)
+- [Baeldung](https://www.baeldung.com/security-spring)
+- [Thymeleaf Dialect](https://www.thymeleaf.org/doc/articles/springsecurity.html)
+
+
+
+Credits to AaronSmithX for image uploader code 
