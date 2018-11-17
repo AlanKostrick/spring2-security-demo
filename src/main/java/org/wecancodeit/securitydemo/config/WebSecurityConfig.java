@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.logoutSuccessUrl("/login?logout")
 		.permitAll()
 		.and()
-	.csrf().disable()
+	.csrf().disable()  //cross-site-reference-forgery ("one click attack"/"session riding")
 	.headers().frameOptions().disable();
 }
 
