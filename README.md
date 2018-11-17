@@ -5,18 +5,16 @@ Login  name/password: **admin/admin** , **user1/user1** or **user2/user2**
 
 
 ## Dependencies used
-`dependencies {
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.4.RELEASE'
-    compile('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-security")
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    runtime('com.h2database:h2')
-    testCompile("junit:junit")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("org.springframework.security:spring-security-test")
-}`
+    `compile("org.springframework.boot:spring-boot-starter-thymeleaf")`
+    `compile group: 'org.thymeleaf.extras', name: `'thymeleaf-extras-springsecurity4', version: '3.0.4.RELEASE'`
+    `compile('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')`
+    `compile("org.springframework.boot:spring-boot-starter-web")`
+    `compile("org.springframework.boot:spring-boot-starter-security")`
+    `compile('org.springframework.boot:spring-boot-starter-data-jpa')`
+    `runtime('com.h2database:h2')`
+    `testCompile("junit:junit")`
+    `testCompile("org.springframework.boot:spring-boot-starter-test")`
+    `testCompile("org.springframework.security:spring-security-test")`
 
 ## Spring 2 updates inclusions/things to be careful of
 - Must give permissions to access your static resources (js, css, images, etc)
