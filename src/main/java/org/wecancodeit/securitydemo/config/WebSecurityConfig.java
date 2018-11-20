@@ -7,8 +7,10 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 
 @Configuration
@@ -17,6 +19,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 
+	
+	//Add this bean to deal for the UserDetails
+	@Bean
+	public UserDetailsService userDetailsService() {
+		return new UserDetailsServiceImp();
+	}
+	
+	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -43,9 +53,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	.csrf().disable()  //cross-site-reference-forgery ("one click attack"/"session riding")
 	.headers().frameOptions().disable();
 }
-
-
+    
     @Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+
+	}
+ //use the above configure method now instead of the in memory below
+
+   /* @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
           .withUser("user1").password(passwordEncoder().encode("user1")).roles("USER")
@@ -53,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           .withUser("user2").password(passwordEncoder().encode("user2")).roles("USER")
           .and()
           .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
-    }
+    }*/
     
   
     

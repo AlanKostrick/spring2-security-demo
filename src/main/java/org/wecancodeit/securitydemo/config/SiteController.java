@@ -23,8 +23,10 @@ import org.wecancodeit.securitydemo.post.ImageUploadService;
 import org.wecancodeit.securitydemo.post.Post;
 import org.wecancodeit.securitydemo.post.PostRepository;
 
+
 @Controller
 public class SiteController {
+	
 
 	@Resource
 	private PostRepository postRepo;
