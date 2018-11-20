@@ -4,8 +4,8 @@ import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.wecancodeit.securitydemo.post.User;
-import org.wecancodeit.securitydemo.post.UserRepository;
+import org.wecancodeit.securitydemo.models.User;
+import org.wecancodeit.securitydemo.models.UserRepository;
 
 @Component
 public class UserPopulator implements CommandLineRunner {

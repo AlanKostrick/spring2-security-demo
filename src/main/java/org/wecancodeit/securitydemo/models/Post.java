@@ -1,4 +1,4 @@
-package org.wecancodeit.securitydemo.post;
+package org.wecancodeit.securitydemo.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
