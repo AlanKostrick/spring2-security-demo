@@ -30,5 +30,3 @@ Thymeleaf has a dialect for spring security... being brought into the build.grad
 - [Thymeleaf Dialect](https://www.thymeleaf.org/doc/articles/springsecurity.html)
 
 
-
-Credits to AaronSmithX for image uploader code 
