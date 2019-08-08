@@ -3,14 +3,11 @@ package org.wecancodeit.securitydemo.config;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.nio.file.Files;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -74,20 +71,12 @@ public class SiteController {
 	}
 
 	@GetMapping("/uploads/{file:.+}") // allows "." to be part of PathVariable instead of truncating it
-	public void serveImage(HttpServletRequest request, HttpServletResponse response,
+	public void serveImage( HttpServletResponse response,
 			@PathVariable("file") String fileName) throws Exception {
 
 		// Resolve path of requested file
 		File requestedFile = uploader.getUploadedFile(fileName);
 
-		// Ensure requested item exists and is a file
-		if (!requestedFile.exists() || !requestedFile.isFile()) {
-			throw new Exception();
-		}
-
-		// Determine and set correct content type of response
-		String fileContentType = Files.probeContentType(requestedFile.toPath());
-		response.setContentType(fileContentType);
 
 		// Serve file by streaming it directly to the response
 		InputStream in = new FileInputStream(requestedFile);
